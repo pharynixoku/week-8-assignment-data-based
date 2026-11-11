@@ -1,0 +1,53 @@
+-- ============================================================================
+-- Week 8 Assignment: MySQL Database Backup and Restore
+-- File: answer.sql
+-- ============================================================================
+
+/*
+===============================================================================
+Question 1: Creating a Complete Database Backup
+===============================================================================
+Task: Write the mysqldump command to create a complete backup of the sales database.
+
+-- Terminal Command:
+mysqldump -u root -p sales > sales_backup.sql
+
+-- Explanation of the Command:
+1. `mysqldump`: MySQL command-line utility used to export database structure and data.
+2. `-u root`: Authenticates as the 'root' administrative user.
+3. `-p`: Prompts securely for the database password before executing.
+4. `sales`: Specifies the target database to back up.
+5. `>`: Redirects the generated output to a file.
+6. `sales_backup.sql`: The target backup file.
+
+-- Importance of Regular Database Backups:
+* Disaster Recovery: Facilitates restoration during system crashes or hardware failures.
+* Data Protection: Guards against accidental user error (e.g., dropping tables).
+* Security: Ensures a safe recovery point in the event of malware or ransomware attacks.
+* Compliance: Meets institutional requirements for data retention and auditing.
+*/
+
+
+/*
+===============================================================================
+Question 2: Backing Up All Databases
+===============================================================================
+Task: Write the mysqldump command to back up all databases on your MySQL server.
+
+-- Terminal Command:
+mysqldump -u root -p --all-databases > all_databases_backup.sql
+
+-- Explanation of the Command:
+1. `mysqldump`: Database export utility.
+2. `-u root`: Log in using root credentials.
+3. `-p`: Securely prompts for the root password.
+4. `--all-databases`: Exports all databases hosted on the server, including system databases.
+5. `>`: Output redirection operator.
+6. `all_databases_backup.sql`: Output destination file.
+
+-- Importance Before Server Migration:
+* Complete Preservation: Ensures no database or system table is omitted during server migration.
+* Account & Permission Retention: Backs up global user privileges and access rights stored in system tables.
+* Downtime Reduction: Allows fast restoration on the target server.
+* Rollback Strategy: Acts as a fail-safe point if migration errors occur.
+*/
